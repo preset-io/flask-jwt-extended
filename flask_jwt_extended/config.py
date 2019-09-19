@@ -231,6 +231,10 @@ class _Config(object):
         return current_app.config['JWT_ALGORITHM']
 
     @property
+    def verify(self):
+        return current_app.config['JWT_VERIFY']
+
+    @property
     def decode_algorithms(self):
         algorithms = current_app.config['JWT_DECODE_ALGORITHMS']
         if not algorithms:

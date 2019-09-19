@@ -208,6 +208,12 @@ class JWTManager(object):
         # https://github.com/jpadilla/pyjwt/blob/master/jwt/api_jwt.py
         app.config.setdefault('JWT_ALGORITHM', 'HS256')
 
+        # Whether or not to verify token contents
+        # This option should only be set to 'False' for local
+        # development or test suites where token verification
+        # is not a required security measure.
+        app.config.setdefault('JWT_VERIFY', True)
+
         # What algorithms are allowed to decode a token
         app.config.setdefault('JWT_DECODE_ALGORITHMS', None)
 
