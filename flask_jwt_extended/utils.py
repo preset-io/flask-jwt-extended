@@ -105,7 +105,8 @@ def decode_token(encoded_token, csrf_value=None, allow_expired=False):
             audience=config.audience,
             issuer=config.issuer,
             leeway=config.leeway,
-            allow_expired=allow_expired
+            allow_expired=allow_expired,
+            verify=config.verify
         )
     except ExpiredSignatureError:
         expired_token = decode_jwt(
@@ -118,7 +119,8 @@ def decode_token(encoded_token, csrf_value=None, allow_expired=False):
             audience=config.audience,
             issuer=config.issuer,
             leeway=config.leeway,
-            allow_expired=True
+            allow_expired=True,
+            verify=config.verify
         )
         ctx_stack.top.expired_jwt = expired_token
         raise
