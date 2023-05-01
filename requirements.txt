@@ -9,7 +9,7 @@ Click==7.0
 cryptography==2.7
 docutils==0.15.2
 filelock==3.0.12
-Flask==1.1.1
+Flask==2.3.2
 idna==2.8
 imagesize==1.1.0
 importlib-metadata==0.19
